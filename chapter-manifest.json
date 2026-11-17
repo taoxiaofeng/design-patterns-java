@@ -1,0 +1,578 @@
+[
+  {
+    "number": 1,
+    "slug": "oop-basics",
+    "cls": "OopBasics",
+    "title": "OOP 基础：对象、类与继承",
+    "group": "oop",
+    "book": 8,
+    "source": "BODY",
+    "idea": "类定义状态与行为，对象各自保存状态；子类可覆盖父类行为。",
+    "roles": "Animal 提供名称与 speak 契约；Cat 和 Dog 覆盖行为；Cat 的能量只能通过 feed 改变。",
+    "tradeoff": "继承表达可替换的类型关系，不应只为了复用几行代码建立层次。这里的宠物模型仅用于教学。",
+    "tasks": [
+      "为 Cat 增加 play(int cost)，拒绝负数和超过当前能量的消耗。",
+      "新增 Bird，放入同一个 Animal 列表，验证动态派发和各对象状态独立。"
+    ]
+  },
+  {
+    "number": 2,
+    "slug": "oop-pillars",
+    "cls": "OopPillars",
+    "title": "OOP 四大支柱",
+    "group": "oop",
+    "book": 13,
+    "source": "TOC_ONLY",
+    "idea": "以抽象定义契约，用封装维护不变量，继承承接契约，多态在运行时选择实现。",
+    "roles": "Account 是抽象类；Savings 继承它；balance 为私有状态；Account 引用调用不同 label 实现。",
+    "tradeoff": "抽象类会占用 Java 的单继承位置。只需要行为契约时优先考虑接口。金额为整数学习单位。",
+    "tasks": [
+      "新增另一种账户，用父类引用操作它。",
+      "为 deposit 增加溢出保护，并测试边界值不会破坏余额。"
+    ]
+  },
+  {
+    "number": 3,
+    "slug": "object-relations",
+    "cls": "ObjectRelations",
+    "title": "对象关系：依赖、关联、聚合与组合",
+    "group": "oop",
+    "book": 20,
+    "source": "TOC_ONLY",
+    "idea": "关系强弱取决于所有权和生命周期，而不只取决于是否存在一个字段。",
+    "roles": "Team 聚合外部 Member；Engine 由 Car 内部创建并拥有；Printer 只在 print 调用期间被依赖。",
+    "tradeoff": "Java 垃圾回收不等于 UML 组合语义。组合强调建模上的独占所有权；关联是一般长期引用，聚合是弱所有权的整体/部分关系。",
+    "tasks": [
+      "增加 Department 与 Team 的普通关联，说明为何不能据字段就认定组合。",
+      "让两个 Team 共享一个 Member，验证从一个团队移除成员不影响另一个团队。"
+    ]
+  },
+  {
+    "number": 4,
+    "slug": "what-is-pattern",
+    "cls": "WhatIsPattern",
+    "title": "什么是设计模式",
+    "group": "intro",
+    "book": 27,
+    "source": "TOC_ONLY",
+    "idea": "模式记录问题、上下文和协作方式，而不是可以无条件粘贴的代码片段。",
+    "roles": "Rule 是一项可替换策略，Checkout 是使用它的上下文；两个策略展示同一种结构的不同实例。",
+    "tradeoff": "这是理解模式的原创小实验，并非把全部模式都归结为策略。只有出现真实变化点时，额外抽象才可能值得。",
+    "tasks": [
+      "在笔记中写出此实验的上下文、问题、解决办法与代价。",
+      "增加满额减免规则，不改 Checkout，测试阈值两侧。"
+    ]
+  },
+  {
+    "number": 5,
+    "slug": "why-patterns",
+    "cls": "WhyPatterns",
+    "title": "为什么学习设计模式",
+    "group": "intro",
+    "book": 31,
+    "source": "TOC_ONLY",
+    "idea": "共享术语有助于讨论设计；比较变化前后的修改范围，才能判断引入模式的收益。",
+    "roles": "legacy 用分支支持渠道；Notifier 注册发送行为，通过新增映射扩展渠道。",
+    "tradeoff": "注册表只是对比实验，不代表分支一定错误；只有少数稳定选项时直接分支可能更清楚。",
+    "tasks": [
+      "同时给 legacy 和 Notifier 增加 push，记录各自修改点。",
+      "对照策略模式和工厂方法，解释注册行为与创建产品的区别。"
+    ]
+  },
+  {
+    "number": 6,
+    "slug": "good-design",
+    "cls": "GoodDesign",
+    "title": "良好设计：复用与可扩展性",
+    "group": "principles",
+    "book": 33,
+    "source": "BODY",
+    "idea": "复用与扩展是目标，但模式增加的复杂度也是成本；把可变的输出方式从稳定业务中分离。",
+    "roles": "Report 只计算合计；Formatter 接口复用同一份计算结果，生成不同表现。",
+    "tradeoff": "额外接口有维护成本。示例用整数和短文本聚焦依赖关系，不提供完整报表或货币系统。",
+    "tasks": [
+      "新增 JSON 格式，不改 Report。",
+      "用包含负数和空列表的数据验证业务合计，说明应否允许负数。"
+    ]
+  },
+  {
+    "number": 7,
+    "slug": "encapsulate-variation",
+    "cls": "EncapsulateVariation",
+    "title": "封装变化",
+    "group": "principles",
+    "book": 38,
+    "source": "BODY",
+    "idea": "将变化频繁的计费规则抽出，让稳定的订单合计流程依赖规则接口。",
+    "roles": "Order 负责商品小计，FeePolicy 隔离可变费用。这里采用原创配送费场景，不复刻 PDF 税率例子。",
+    "tradeoff": "抽出方法适合小变化；只有规则独立演化时再抽成对象。示例金额单位为分，不涉及真实税务规则。",
+    "tasks": [
+      "新增按地区配置的费用策略，缺失地区时明确报错。",
+      "以空订单、固定费用、免配送三种情形测试总额。"
+    ]
+  },
+  {
+    "number": 8,
+    "slug": "program-to-interface",
+    "cls": "ProgramToInterface",
+    "title": "面向接口编程",
+    "group": "principles",
+    "book": 42,
+    "source": "TOC_ONLY",
+    "idea": "让上层依赖需要的行为契约，通过构造器选择实现。",
+    "roles": "MessageService 依赖 Sender，MemorySender 是可观察的内存实现，可替换为任何满足接口的发送器。",
+    "tradeoff": "契约不仅是方法签名，还包含错误、顺序等语义；接口并不意味着必须为每个类创建一套抽象。",
+    "tasks": [
+      "增加带前缀的 Sender，实现同一服务的替换运行。",
+      "定义失败语义，给发送失败场景增加测试。"
+    ]
+  },
+  {
+    "number": 9,
+    "slug": "composition-over-inheritance",
+    "cls": "CompositionOverInheritance",
+    "title": "组合优于继承",
+    "group": "principles",
+    "book": 47,
+    "source": "TOC_ONLY",
+    "idea": "把可独立变化的行为组合到对象中，避免不同变化维度产生子类组合爆炸。",
+    "roles": "Robot 组合 Movement 与 Tool，移动方式和工作方式可独立选择。",
+    "tradeoff": "组合会增加委托代码；确实满足 is-a 契约、需要稳定层次时仍可用继承。",
+    "tasks": [
+      "新增飞行移动方式和拍照工具，组合出两个 Robot。",
+      "统计若用子类表达所有组合，需要多少个叶子类。"
+    ]
+  },
+  {
+    "number": 10,
+    "slug": "single-responsibility",
+    "cls": "SingleResponsibility",
+    "title": "SOLID：单一职责原则",
+    "group": "solid",
+    "book": 52,
+    "source": "TOC_ONLY",
+    "idea": "围绕不同的变化原因分离职责，而不是把每个方法都拆成一个类。",
+    "roles": "Invoice 计算金额；Renderer 决定文本布局；Archive 决定保存方式。",
+    "tradeoff": "分离过度会导致导航成本。示例使用内存归档，避免数据库配置遮蔽职责边界。",
+    "tasks": [
+      "新增另一种渲染格式，保证金额计算不变。",
+      "新增 Archive 实现并测试，不让 Invoice 获得任何持久化依赖。"
+    ]
+  },
+  {
+    "number": 11,
+    "slug": "open-closed",
+    "cls": "OpenClosed",
+    "title": "SOLID：开闭原则",
+    "group": "solid",
+    "book": 54,
+    "source": "TOC_ONLY",
+    "idea": "在预期变化点通过新增实现扩展行为，使稳定调用流程保持不变。",
+    "roles": "AreaCalculator 接受 Shape，Rectangle 和 Circle 负责各自面积公式。",
+    "tradeoff": "开闭是相对于某个变化轴而言的；新增操作也可能仍需修改所有 Shape。",
+    "tasks": [
+      "新增 Triangle，实现 Shape 并添加面积测试。",
+      "如果需求变成导出所有形状，讨论当前接口是否仍适合。"
+    ]
+  },
+  {
+    "number": 12,
+    "slug": "liskov-substitution",
+    "cls": "LiskovSubstitution",
+    "title": "SOLID：里氏替换原则",
+    "group": "solid",
+    "book": 57,
+    "source": "TOC_ONLY",
+    "idea": "子类型不能破坏调用者依赖的前置条件、后置条件和不变量。",
+    "roles": "ReadableStore 只读；WritableStore 扩展读写能力；ReadOnlySnapshot 不伪装成可写存储。",
+    "tradeoff": "与其在只读实现中让 put 抛 UnsupportedOperationException，不如缩小契约。这里缺失键约定返回 Optional.empty。",
+    "tasks": [
+      "新增第三种 ReadableStore，并运行相同的读取契约测试。",
+      "写出把只读存储强塞进 WritableStore 后会破坏的客户假设。"
+    ]
+  },
+  {
+    "number": 13,
+    "slug": "interface-segregation",
+    "cls": "InterfaceSegregation",
+    "title": "SOLID：接口隔离原则",
+    "group": "solid",
+    "book": 64,
+    "source": "TOC_ONLY",
+    "idea": "让客户只依赖实际需要的能力，避免实现无意义的方法。",
+    "roles": "Printer 与 Scanner 是小接口；PrintOnly 仅打印，AllInOne 同时实现两种能力；printJob 只依赖 Printer。",
+    "tradeoff": "过细接口也增加组装成本；按使用者与变化原因拆分，而不是机械地每个方法一个接口。",
+    "tasks": [
+      "新增 Fax 能力，保证 PrintOnly 不需要修改。",
+      "分别测试只打印客户和扫描客户，不做向具体类的强制转换。"
+    ]
+  },
+  {
+    "number": 14,
+    "slug": "dependency-inversion",
+    "cls": "DependencyInversion",
+    "title": "SOLID：依赖倒置原则",
+    "group": "solid",
+    "book": 67,
+    "source": "TOC_ONLY",
+    "idea": "高层业务与低层细节共同依赖抽象；由外部组装依赖，而不是在高层构造具体存储。",
+    "roles": "OrderService 使用 OrderRepository；MemoryRepository 实现持久化契约；demo 充当装配入口。",
+    "tradeoff": "依赖注入是实现方式之一，依赖倒置是依赖方向原则；不需要容器框架也能做到。",
+    "tasks": [
+      "新增带审计的仓库实现并注入服务。",
+      "定义重复订单号策略，并通过测试固定该语义。"
+    ]
+  },
+  {
+    "number": 15,
+    "slug": "factory-method",
+    "cls": "FactoryMethod",
+    "title": "工厂方法 Factory Method",
+    "group": "creational",
+    "book": 74,
+    "source": "BODY",
+    "idea": "让创建者的业务流程调用可覆盖的工厂方法，子类决定返回哪种产品。",
+    "roles": "Exporter 是 Creator；createWriter 是工厂方法；Writer 是 Product；TextExporter 与 HtmlExporter 是具体创建者。",
+    "tradeoff": "会增加创建者子类。与简单工厂的集中分支不同，本例通过覆盖方法变化产品；与抽象工厂不同，本例只创建一种产品。",
+    "tasks": [
+      "新增 MarkdownExporter 与相应 Writer，保持 Exporter.export 不变。",
+      "加入一个复用同一 Writer 的创建者，用测试说明工厂方法不必每次 new。"
+    ]
+  },
+  {
+    "number": 16,
+    "slug": "abstract-factory",
+    "cls": "AbstractFactory",
+    "title": "抽象工厂 Abstract Factory",
+    "group": "creational",
+    "book": 90,
+    "source": "OVERVIEW_ONLY",
+    "idea": "通过一个工厂创建同一产品族中的多个相关产品，让客户依赖抽象产品。",
+    "roles": "UiFactory 生产 Button 与 Checkbox；LightFactory 和 DarkFactory 提供一致风格的产品族；Screen 是客户。",
+    "tradeoff": "新增产品族方便，新增一种产品需要修改所有工厂。示例用文本模拟 UI，不启动图形窗口。",
+    "tasks": [
+      "新增 ContrastFactory，验证两个产品均采用 contrast 风格。",
+      "增加 Slider 产品，记录必须修改的接口和实现。"
+    ]
+  },
+  {
+    "number": 17,
+    "slug": "builder",
+    "cls": "BuilderPattern",
+    "title": "生成器 Builder",
+    "group": "creational",
+    "book": 105,
+    "source": "OVERVIEW_ONLY",
+    "idea": "把复杂对象构造拆成步骤，让相同的构造流程作用于不同生成器，得到不同表示。",
+    "roles": "BuildSteps 是 Builder；MealBuilder 和 MenuBuilder 是具体生成器；Director 组织步骤；Meal 与字符串是不同产品。",
+    "tradeoff": "Director 可选，但在此用于展示流程复用。区别于只串联 setter 的写法，本例同一流程会生成两种表示。",
+    "tasks": [
+      "给 BuildSteps 增加 dessert，让套餐与菜单两种表示同步变化。",
+      "新增儿童套餐构造流程，验证不会污染先前生成的产品。"
+    ]
+  },
+  {
+    "number": 18,
+    "slug": "prototype",
+    "cls": "PrototypePattern",
+    "title": "原型 Prototype",
+    "group": "creational",
+    "book": 124,
+    "source": "OVERVIEW_ONLY",
+    "idea": "通过原型契约复制对象，使客户不依赖对象的具体类，并明确深浅复制边界。",
+    "roles": "Prototype 声明 copy；Document 复制自己的可变标签列表；客户通过 Prototype 获取副本。",
+    "tradeoff": "深复制可能昂贵；循环引用和资源句柄需要专门策略。本例不使用 Java Cloneable，避免浅复制误解。",
+    "tasks": [
+      "增加一个带可变附件对象的原型，写测试区分浅复制和深复制。",
+      "建立按名称选择 Prototype 的注册表，复制后互不影响。"
+    ]
+  },
+  {
+    "number": 19,
+    "slug": "singleton",
+    "cls": "SingletonPattern",
+    "title": "单例 Singleton",
+    "group": "creational",
+    "book": 138,
+    "source": "OVERVIEW_ONLY",
+    "idea": "限制某个类的实例数量，并提供统一访问入口。",
+    "roles": "Configuration 使用枚举常量 INSTANCE 作为唯一入口，只保存不可变的学习配置。",
+    "tradeoff": "唯一性受类加载器边界限制；单例不自动保证内部可变状态安全，也会带来全局依赖和测试隔离问题。",
+    "tasks": [
+      "比较枚举单例与静态内部类持有者写法。",
+      "把一个依赖单例的客户改为构造器注入，解释测试上的差异。"
+    ]
+  },
+  {
+    "number": 20,
+    "slug": "adapter",
+    "cls": "AdapterPattern",
+    "title": "适配器 Adapter",
+    "group": "structural",
+    "book": 150,
+    "source": "TOC_ONLY",
+    "idea": "将已有对象的不兼容接口转换为客户期望的接口。",
+    "roles": "Temperature 是目标接口；LegacySensor 输出华氏度；SensorAdapter 转换单位并满足摄氏度接口。",
+    "tradeoff": "适配器是兼容接口，不是为统一接口增加功能；单位和精度约定必须显式。",
+    "tasks": [
+      "新增返回整数毫摄氏度的旧传感器适配器。",
+      "测试冰点、沸点与负温度转换，使用浮点容差。"
+    ]
+  },
+  {
+    "number": 21,
+    "slug": "bridge",
+    "cls": "BridgePattern",
+    "title": "桥接 Bridge",
+    "group": "structural",
+    "book": 163,
+    "source": "TOC_ONLY",
+    "idea": "将抽象与实现两个独立变化的维度通过组合连接，而非构造所有组合子类。",
+    "roles": "Remote 与 AdvancedRemote 是抽象维度；Device 是实现接口；Radio 与 Television 是实现维度。",
+    "tradeoff": "桥接用于事先分离变化维度；适配器通常用于事后接入不兼容接口。示例设备不连接硬件。",
+    "tasks": [
+      "新增 Speaker 设备，不修改遥控器。",
+      "新增带 mute 的遥控器抽象，验证可用于所有设备。"
+    ]
+  },
+  {
+    "number": 22,
+    "slug": "composite",
+    "cls": "CompositePattern",
+    "title": "组合 Composite",
+    "group": "structural",
+    "book": 178,
+    "source": "TOC_ONLY",
+    "idea": "让叶子与容器共享接口，客户可以统一处理树中的单个对象或整个子树。",
+    "roles": "Node 是 Component；Item 是 Leaf；Box 是 Composite，通过递归求和计算价格。",
+    "tradeoff": "统一接口可能掩盖叶子与容器的差异。本例使用不可变树和不可变快照，构造时不形成循环。",
+    "tasks": [
+      "新增重量计算操作，讨论是否适合改用访问者。",
+      "增加三层嵌套和空 Box 的测试。"
+    ]
+  },
+  {
+    "number": 23,
+    "slug": "decorator",
+    "cls": "DecoratorPattern",
+    "title": "装饰 Decorator",
+    "group": "structural",
+    "book": 192,
+    "source": "TOC_ONLY",
+    "idea": "保持相同组件接口，通过嵌套包装在运行时组合附加行为。",
+    "roles": "Text 是 Component；Plain 是具体组件；Bold 与 Brackets 是装饰器，保存另一个 Text 并委托。",
+    "tradeoff": "装饰顺序影响结果，嵌套层数多时调试困难；与代理相比，重点是叠加职责。",
+    "tasks": [
+      "新增 Uppercase 装饰器，比较不同组合顺序。",
+      "验证装饰器不会修改原始 Plain 对象。"
+    ]
+  },
+  {
+    "number": 24,
+    "slug": "facade",
+    "cls": "FacadePattern",
+    "title": "外观 Facade",
+    "group": "structural",
+    "book": 210,
+    "source": "TOC_ONLY",
+    "idea": "对复杂子系统提供一个面向客户任务的简化入口。",
+    "roles": "CheckoutFacade 组织 Inventory、Payment 和 Shipping；客户只调用 checkout。",
+    "tradeoff": "外观不是事务管理器。本例记录调用顺序并在失败时停止，未实现跨服务回滚；真实交易需额外一致性机制。",
+    "tasks": [
+      "模拟支付失败，验证 Shipping 不会被调用。",
+      "设计库存预留与失败补偿方案，并解释应放在哪一层。"
+    ]
+  },
+  {
+    "number": 25,
+    "slug": "flyweight",
+    "cls": "FlyweightPattern",
+    "title": "享元 Flyweight",
+    "group": "structural",
+    "book": 220,
+    "source": "TOC_ONLY",
+    "idea": "共享不可变内在状态，把位置等外在状态保存在使用上下文中，减少重复对象。",
+    "roles": "Style 是共享享元；StyleFactory 按完整 Key 缓存；Glyph 保存字符和坐标等外在状态。",
+    "tradeoff": "缓存要有生命周期边界，键必须包含所有内在状态。本例每次 demo 新建工厂，且只用于单线程。",
+    "tasks": [
+      "新增字号属性，同时修改 Key 并验证不同字号不错误共享。",
+      "增加工厂容量限制或生命周期清理，讨论长期运行时的内存代价。"
+    ]
+  },
+  {
+    "number": 26,
+    "slug": "proxy",
+    "cls": "ProxyPattern",
+    "title": "代理 Proxy",
+    "group": "structural",
+    "book": 234,
+    "source": "TOC_ONLY",
+    "idea": "用相同服务接口的替身控制真实服务的访问时机。",
+    "roles": "Image 是 Subject；RealImage 模拟昂贵加载；LazyImage 代理按需创建并复用真实对象。",
+    "tradeoff": "示例是单线程虚拟代理，不保证并发首次加载只执行一次；代理也可用于权限、远程调用等目的。",
+    "tasks": [
+      "为 LazyImage 增加线程安全的延迟加载，并写并发测试。",
+      "新增权限代理，验证拒绝时真实服务没有加载。"
+    ]
+  },
+  {
+    "number": 27,
+    "slug": "chain-of-responsibility",
+    "cls": "ChainOfResponsibility",
+    "title": "责任链 Chain of Responsibility",
+    "group": "behavioral",
+    "book": 250,
+    "source": "TOC_ONLY",
+    "idea": "让请求沿处理者链传递，每个节点可处理、拒绝或继续交给下一个节点。",
+    "roles": "Handler 是处理者抽象；Authenticated、WithinLimit、Approved 依次校验请求，拒绝时短路。",
+    "tradeoff": "链顺序决定行为，请求也可能无人处理。本例链尾显式返回 unhandled，避免默默丢失。",
+    "tasks": [
+      "增加地区校验处理者，测试它在链中不同位置时的执行顺序。",
+      "增加处理轨迹，验证短路后后续节点没有执行。"
+    ]
+  },
+  {
+    "number": 28,
+    "slug": "command",
+    "cls": "CommandPattern",
+    "title": "命令 Command",
+    "group": "behavioral",
+    "book": 268,
+    "source": "TOC_ONLY",
+    "idea": "将请求封装为对象，使调用者与接收者分离，并能保存执行历史实现撤销。",
+    "roles": "Command 是命令接口；Append 保存一次追加动作；Editor 是接收者；Invoker 管理历史。",
+    "tradeoff": "命令保存的是动作意图；备忘录保存的是状态。本例单线程且编辑只通过 Invoker，按后进先出撤销。",
+    "tasks": [
+      "新增 Replace 命令，保存足够的信息以撤销。",
+      "给 Invoker 增加 redo 栈，测试新动作会清除 redo 历史。"
+    ]
+  },
+  {
+    "number": 29,
+    "slug": "iterator",
+    "cls": "IteratorPattern",
+    "title": "迭代器 Iterator",
+    "group": "behavioral",
+    "book": 289,
+    "source": "TOC_ONLY",
+    "idea": "把遍历进度放在独立迭代器中，在不暴露集合内部结构的情况下逐个访问元素。",
+    "roles": "Playlist 是聚合对象，iterator 每次创建独立游标；Iterator<String> 是标准遍历契约。",
+    "tradeoff": "示例集合为不可变快照，因而无需讨论并发修改。可变集合必须定义 fail-fast 或快照等迭代语义。",
+    "tasks": [
+      "新增 reverseIterator，保持集合内部列表不可见。",
+      "增加空集合与耗尽后 next 的测试，遵循标准异常契约。"
+    ]
+  },
+  {
+    "number": 30,
+    "slug": "mediator",
+    "cls": "MediatorPattern",
+    "title": "中介者 Mediator",
+    "group": "behavioral",
+    "book": 304,
+    "source": "TOC_ONLY",
+    "idea": "将多个同事对象之间的直接通信集中到中介者，降低同事之间的耦合。",
+    "roles": "ChatRoom 是中介者，User 是同事；用户只知道房间，不保存其他用户的引用。",
+    "tradeoff": "中介者可能成为巨型对象；示例房间单线程、不持久化，广播时不向发送者回送。",
+    "tasks": [
+      "增加离开房间功能，并测试离开后不再收到消息。",
+      "增加私聊路由，让同事对象仍无需保存其他同事引用。"
+    ]
+  },
+  {
+    "number": 31,
+    "slug": "memento",
+    "cls": "MementoPattern",
+    "title": "备忘录 Memento",
+    "group": "behavioral",
+    "book": 320,
+    "source": "TOC_ONLY",
+    "idea": "在不向外暴露对象内部状态的情况下保存快照，之后由原发器恢复。",
+    "roles": "Editor 是原发器，Snapshot 是私有构造的备忘录，History 是管理者；管理者只保存句柄，不读取内容。",
+    "tradeoff": "快照占用内存，且应定义所属对象和恢复粒度。本例快照绑定原 Editor，跨对象恢复会被拒绝。",
+    "tasks": [
+      "为 Editor 新增光标位置，确保快照同时恢复文本与光标。",
+      "为 History 设置容量，测试淘汰最旧快照后的行为。"
+    ]
+  },
+  {
+    "number": 32,
+    "slug": "observer",
+    "cls": "ObserverPattern",
+    "title": "观察者 Observer",
+    "group": "behavioral",
+    "book": 336,
+    "source": "TOC_ONLY",
+    "idea": "发布者维护订阅者集合，事件发生时通知订阅者，运行时允许订阅与取消。",
+    "roles": "News 是发布者；Listener 是观察者契约；subscribe 和 unsubscribe 控制关系。",
+    "tradeoff": "示例同步通知、去重订阅，并采用订阅快照迭代；回调异常直接传播并停止当次后续通知，不是可靠消息系统。",
+    "tasks": [
+      "增加单次订阅，测试它在回调期间取消订阅时的语义。",
+      "设计并实现异常隔离策略，验证一个订阅者失败不影响其他订阅者。"
+    ]
+  },
+  {
+    "number": 33,
+    "slug": "state",
+    "cls": "StatePattern",
+    "title": "状态 State",
+    "group": "behavioral",
+    "book": 352,
+    "source": "TOC_ONLY",
+    "idea": "将依赖状态的行为委托给状态对象，由状态对象决定行为与转换。",
+    "roles": "Player 是 Context；Mode 是 State；Paused、Playing、Stopped 是具体状态。状态对象主动触发转换。",
+    "tradeoff": "状态数很少且稳定时 enum 加分支可能更简单。与策略相比，状态对象关注生命周期中的转换。",
+    "tasks": [
+      "新增 Buffering 状态和合法转换，避免重新散落状态判断。",
+      "编写转换表，测试所有状态上的 press 与 stop。"
+    ]
+  },
+  {
+    "number": 34,
+    "slug": "strategy",
+    "cls": "StrategyPattern",
+    "title": "策略 Strategy",
+    "group": "behavioral",
+    "book": 368,
+    "source": "TOC_ONLY",
+    "idea": "将可替换算法封装在同一接口下，客户选择算法，环境委托计算。",
+    "roles": "Shipping 是策略接口；Standard 与 Express 是具体策略；Checkout 是可在运行时切换策略的环境。",
+    "tradeoff": "策略通常由客户选择；状态通常由状态机自身转换。示例是虚构配送费，不代表真实商业报价。",
+    "tasks": [
+      "新增按订单金额免配送的策略，测试边界。",
+      "将策略改为不可变环境构造参数，比较运行时切换需求。"
+    ]
+  },
+  {
+    "number": 35,
+    "slug": "template-method",
+    "cls": "TemplateMethod",
+    "title": "模板方法 Template Method",
+    "group": "behavioral",
+    "book": 381,
+    "source": "TOC_ONLY",
+    "idea": "父类固定算法骨架，将变化步骤交给子类实现或覆盖。",
+    "roles": "Importer.run 是 final 模板方法；parse 是抽象步骤；after 是可选钩子；CsvImporter 是具体类。",
+    "tradeoff": "继承会把子类绑定到父类骨架；若需要运行时替换整个算法，可考虑策略。示例 CSV 只按逗号拆分，不支持引号转义。",
+    "tasks": [
+      "新增分号分隔导入器，复用 run 的顺序。",
+      "让 after 做额外记录，测试它始终在 parse 后执行。"
+    ]
+  },
+  {
+    "number": 36,
+    "slug": "visitor",
+    "cls": "VisitorPattern",
+    "title": "访问者 Visitor",
+    "group": "behavioral",
+    "book": 393,
+    "source": "TOC_ONLY",
+    "idea": "把作用于稳定元素类型集合的新操作移到访问者，通过 accept 与重载 visit 实现双分派。",
+    "roles": "Shape 是元素；Circle 和 Rectangle 的 accept 调用匹配的 visit；AreaVisitor 与 NameVisitor 是独立操作。",
+    "tradeoff": "新增操作方便，新增元素类型需要修改所有访问者。适合元素集合稳定、操作经常增加的情形。",
+    "tasks": [
+      "新增 PerimeterVisitor，不修改任何 Shape。",
+      "新增 Triangle，记录 Visitor 和全部具体访问者的修改范围。"
+    ]
+  }
+]

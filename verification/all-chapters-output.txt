@@ -1,0 +1,72 @@
+[01] OOP 基础：对象、类与继承 (试读正文)
+Mimi: meow, energy=3; Dou: woof
+[02] OOP 四大支柱 (仅目录，章节正文缺失)
+savings:100
+[03] 对象关系：依赖、关联、聚合与组合 (仅目录，章节正文缺失)
+roster=[Member[name=Lin]]; engine running
+[04] 什么是设计模式 (仅目录，章节正文缺失)
+same structure, different rule: 100 / 90
+[05] 为什么学习设计模式 (仅目录，章节正文缺失)
+push:hello
+[06] 良好设计：复用与可扩展性 (试读正文)
+total=30 / <b>30</b>
+[07] 封装变化 (试读正文)
+fixed=1100, free=1000
+[08] 面向接口编程 (仅目录，章节正文缺失)
+[welcome Lin]
+[09] 组合优于继承 (仅目录，章节正文缺失)
+roll:clean / roll:inspect
+[10] SOLID：单一职责原则 (仅目录，章节正文缺失)
+[TOTAL=30]
+[11] SOLID：开闭原则 (仅目录，章节正文缺失)
+area=9.141592653589793
+[12] SOLID：里氏替换原则 (仅目录，章节正文缺失)
+Lin / Qin
+[13] SOLID：接口隔离原则 (仅目录，章节正文缺失)
+print:report / scan:data
+[14] SOLID：依赖倒置原则 (仅目录，章节正文缺失)
+saved=true
+[15] 工厂方法 Factory Method (试读正文)
+TEXT:hello / <p>hello</p>
+[16] 抽象工厂 Abstract Factory (仅简短概述，章节正文缺失)
+light-button,light-checkbox / dark-button,dark-checkbox
+[17] 生成器 Builder (仅简短概述，章节正文缺失)
+Meal[main=rice, drink=tea] / main=rice,drink=tea
+[18] 原型 Prototype (仅简短概述，章节正文缺失)
+original=[java], copy=[java, patterns]
+[19] 单例 Singleton (仅简短概述，章节正文缺失)
+same=true, env=learning
+[20] 适配器 Adapter (仅目录，章节正文缺失)
+celsius=0.0, freezing=true
+[21] 桥接 Bridge (仅目录，章节正文缺失)
+radio=true, tv=false
+[22] 组合 Composite (仅目录，章节正文缺失)
+tree total=55
+[23] 装饰 Decorator (仅目录，章节正文缺失)
+[<b>hello</b>]
+[24] 外观 Facade (仅目录，章节正文缺失)
+shipped:book, steps=[reserve:book, pay:50]
+[25] 享元 Flyweight (仅目录，章节正文缺失)
+A@0,0:blue / B@1,0:blue, styles=1
+[26] 代理 Proxy (仅目录，章节正文缺失)
+image:map.png, loads=1
+[27] 责任链 Chain of Responsibility (仅目录，章节正文缺失)
+approved / denied:auth
+[28] 命令 Command (仅目录，章节正文缺失)
+hello world -> undo -> hello
+[29] 迭代器 Iterator (仅目录，章节正文缺失)
+[intro, finale]
+[30] 中介者 Mediator (仅目录，章节正文缺失)
+[Lin:hello]
+[31] 备忘录 Memento (仅目录，章节正文缺失)
+draft
+[32] 观察者 Observer (仅目录，章节正文缺失)
+[release]
+[33] 状态 State (仅目录，章节正文缺失)
+stopped -> playing -> paused
+[34] 策略 Strategy (仅目录，章节正文缺失)
+standard=10, express=25
+[35] 模板方法 Template Method (仅目录，章节正文缺失)
+[apple, pear]
+[36] 访问者 Visitor (仅目录，章节正文缺失)
+rectangle area=6.0

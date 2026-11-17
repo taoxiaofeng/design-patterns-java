@@ -1,0 +1,118 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< study:design-patterns-lab >----------------------
+[INFO] Building Design Patterns Java 17 Learning Lab 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ design-patterns-lab ---
+[INFO] Deleting ${project}\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ design-patterns-lab ---
+[INFO] Copying 36 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ design-patterns-lab ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 38 source files with javac [debug release 17] to target\classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ design-patterns-lab ---
+[INFO] skip non existing resourceDirectory ${project}\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ design-patterns-lab ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 37 source files with javac [debug release 17] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ design-patterns-lab ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running study.chapters.c01.OopBasicsTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.056 s -- in study.chapters.c01.OopBasicsTest
+[INFO] Running study.chapters.c02.OopPillarsTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in study.chapters.c02.OopPillarsTest
+[INFO] Running study.chapters.c03.ObjectRelationsTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s -- in study.chapters.c03.ObjectRelationsTest
+[INFO] Running study.chapters.c04.WhatIsPatternTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in study.chapters.c04.WhatIsPatternTest
+[INFO] Running study.chapters.c05.WhyPatternsTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in study.chapters.c05.WhyPatternsTest
+[INFO] Running study.chapters.c06.GoodDesignTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in study.chapters.c06.GoodDesignTest
+[INFO] Running study.chapters.c07.EncapsulateVariationTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in study.chapters.c07.EncapsulateVariationTest
+[INFO] Running study.chapters.c08.ProgramToInterfaceTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in study.chapters.c08.ProgramToInterfaceTest
+[INFO] Running study.chapters.c09.CompositionOverInheritanceTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in study.chapters.c09.CompositionOverInheritanceTest
+[INFO] Running study.chapters.c10.SingleResponsibilityTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in study.chapters.c10.SingleResponsibilityTest
+[INFO] Running study.chapters.c11.OpenClosedTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in study.chapters.c11.OpenClosedTest
+[INFO] Running study.chapters.c12.LiskovSubstitutionTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in study.chapters.c12.LiskovSubstitutionTest
+[INFO] Running study.chapters.c13.InterfaceSegregationTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in study.chapters.c13.InterfaceSegregationTest
+[INFO] Running study.chapters.c14.DependencyInversionTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in study.chapters.c14.DependencyInversionTest
+[INFO] Running study.chapters.c15.FactoryMethodTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in study.chapters.c15.FactoryMethodTest
+[INFO] Running study.chapters.c16.AbstractFactoryTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in study.chapters.c16.AbstractFactoryTest
+[INFO] Running study.chapters.c17.BuilderPatternTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in study.chapters.c17.BuilderPatternTest
+[INFO] Running study.chapters.c18.PrototypePatternTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in study.chapters.c18.PrototypePatternTest
+[INFO] Running study.chapters.c19.SingletonPatternTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in study.chapters.c19.SingletonPatternTest
+[INFO] Running study.chapters.c20.AdapterPatternTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in study.chapters.c20.AdapterPatternTest
+[INFO] Running study.chapters.c21.BridgePatternTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in study.chapters.c21.BridgePatternTest
+[INFO] Running study.chapters.c22.CompositePatternTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in study.chapters.c22.CompositePatternTest
+[INFO] Running study.chapters.c23.DecoratorPatternTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in study.chapters.c23.DecoratorPatternTest
+[INFO] Running study.chapters.c24.FacadePatternTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in study.chapters.c24.FacadePatternTest
+[INFO] Running study.chapters.c25.FlyweightPatternTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in study.chapters.c25.FlyweightPatternTest
+[INFO] Running study.chapters.c26.ProxyPatternTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in study.chapters.c26.ProxyPatternTest
+[INFO] Running study.chapters.c27.ChainOfResponsibilityTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in study.chapters.c27.ChainOfResponsibilityTest
+[INFO] Running study.chapters.c28.CommandPatternTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in study.chapters.c28.CommandPatternTest
+[INFO] Running study.chapters.c29.IteratorPatternTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in study.chapters.c29.IteratorPatternTest
+[INFO] Running study.chapters.c30.MediatorPatternTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in study.chapters.c30.MediatorPatternTest
+[INFO] Running study.chapters.c31.MementoPatternTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in study.chapters.c31.MementoPatternTest
+[INFO] Running study.chapters.c32.ObserverPatternTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in study.chapters.c32.ObserverPatternTest
+[INFO] Running study.chapters.c33.StatePatternTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in study.chapters.c33.StatePatternTest
+[INFO] Running study.chapters.c34.StrategyPatternTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in study.chapters.c34.StrategyPatternTest
+[INFO] Running study.chapters.c35.TemplateMethodTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in study.chapters.c35.TemplateMethodTest
+[INFO] Running study.chapters.c36.VisitorPatternTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in study.chapters.c36.VisitorPatternTest
+[INFO] Running study.LauncherTest
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.093 s -- in study.LauncherTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 120, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ design-patterns-lab ---
+[INFO] Building jar: ${project}\target\design-patterns-lab.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  8.571 s
+[INFO] Finished at: 2026-11-17T11:24:11+08:00
+[INFO] ------------------------------------------------------------------------

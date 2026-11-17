@@ -1,0 +1,5 @@
+10 | single-responsibility | SOLID：单一职责原则 | solid | 仅目录，章节正文缺失
+11 | open-closed | SOLID：开闭原则 | solid | 仅目录，章节正文缺失
+12 | liskov-substitution | SOLID：里氏替换原则 | solid | 仅目录，章节正文缺失
+13 | interface-segregation | SOLID：接口隔离原则 | solid | 仅目录，章节正文缺失
+14 | dependency-inversion | SOLID：依赖倒置原则 | solid | 仅目录，章节正文缺失
